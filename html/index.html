@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+    <title>Pusaaaaaaaaaaaaaaaaaa</title>
+  </head>
+  <body>
+    <div class="pogi">
+      <img src="./img/cat.png" class="cat" alt="cat" />
+      <header class="desc">A cat paw</header>
+    </div>
+    <div class="mid">
+      <h1 class="cote">Pusang Gala.</h1>
+      <p class="idk">hindi ko na alam ang aking ginagawa</p>
+      <img
+        src="./img/cat2.svg"
+        alt="cat1"
+        class="cat1"
+        id="idk"
+        onclick="changeImage()"
+      />
+    </div>
+    <script>
+      function changeImage() {
+        if (document.getElementById("idk").src == "./img/cat2.svg") {
+        } else {
+          document.getElementById("idk").src = "./img/cat1.svg";
+        }
+      }
+    </script>
+  </body>
+</html>
