@@ -43,6 +43,10 @@ public class GreaterThanEquals {
                 System.out.println("-------------------------------------");
                 System.out.println("A is less than B.");
                 System.out.println("-------------------------------------");
+            } else if (A == B) {
+                System.out.println("-------------------------------------");
+                System.out.println("A is equals to B.");
+                System.out.println("-------------------------------------");
             }
         }
 
