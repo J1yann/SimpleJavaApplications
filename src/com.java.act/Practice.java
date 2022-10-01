@@ -11,20 +11,20 @@ public class Practice {
     }
 
     static class BankSystem {
-        double balance = 0.1;
+        int balance = 1;
         String customerName;
 
         BankSystem(String userName) {
             userName = customerName;
         }
 
-        void deposit(double amount) {
+        void deposit(int amount) {
             if (amount != 0) {
                 balance = balance + amount;
             }
         }
 
-        void widthraw(double amount) {
+        void widthraw(int amount) {
             if (amount != 0) {
                 balance = balance - amount;
             }
@@ -33,6 +33,7 @@ public class Practice {
         void menu() {
             Scanner userInput = new Scanner(System.in);
             byte option;
+            boolean exit = false;
 
             Scanner customerName = new Scanner(System.in);
             System.out.println("Good Day! What's your name?: ");
@@ -40,19 +41,23 @@ public class Practice {
             System.out.println("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*");
             System.out.println("Hello, " + userName + '!' + " What you want to do?: ");
             System.out.println("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*");
-
+            // Created by Jeane Ledesma
             do {
                 System.out.println("1: Check balance\n2: Deposit\n3: Widthraw\n4: Exit");
                 option = userInput.nextByte();
 
+                if (option == 4) {
+                    exit = true;
+                }
+
                 switch (option) {
                     case 1:
-                        if (balance == 0.1) {
+                        if (balance == 1) {
                             System.out.println("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*");
-                            System.out.println("Your default balance is 0.1");
+                            System.out.println("Your default balance is 1 Peso");
                         } else {
                             System.out.println("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*");
-                            System.out.println("Your balance is: " + balance);
+                            System.out.println("Your balance is: " + balance + " Pesos. ");
                         }
                         System.out.println("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*");
                         break;
@@ -72,15 +77,15 @@ public class Practice {
                         System.out.println("Enter the amount you want to widthraw in PHP: ");
                         int widthrawAmount = userInput.nextInt();
                         widthraw(widthrawAmount);
-                        System.out.println("=*=*=*=*=*=*=*=*=*");
+                        System.out.println("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*");
                         System.out.println("You've widthrawn " + widthrawAmount + " Pesos");
-                        System.out.println("=*=*=*=*=*=*=*=*=*");
+                        System.out.println("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*");
                         break;
 
                     case 4:
                         System.out.println("==================================================");
                 }
-            } while (option != 4);
+            } while (exit != true);
             System.out.println("Thank you!");
             userInput.close();
             customerName.close();
